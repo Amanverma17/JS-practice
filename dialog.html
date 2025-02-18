@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1" onclick="opendialog()">Open</button>
+    <button id="btn2" onclick="closedialog()">Close</button>
+
+
+    <dialog id="dialog-box">
+        <h1>This is an dialog box</h1>
+    </dialog>
+
+
+    <script>
+
+        function opendialog(){
+            const a = document.getElementById('dialog-box')
+            a.show()
+        }
+
+        function closedialog(){
+            const a = document.getElementById('dialog-box')
+            a.close()
+        }
+
+    </script>
+</body>
+</html>

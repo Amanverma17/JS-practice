@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS practice</title>
+</head>
+
+<body>
+
+
+
+    <!-- <script>
+        const age = prompt("Enter age:")
+        age=Number.parseInt(age)
+        console.log(age)
+        if(age>9 && age>=18){
+            alert("condition true")
+        }
+        else{
+            alert("condition false")
+        }
+        console.log("AMAN")
+    </script> -->
+
+
+
+    <!-- <script>
+        const age = prompt("Enter age :")
+        age = parseInt(age)   // this line is showing error
+        console.log((age>=18? "valid to vote" : "not valid to vote"))
+    </script> -->
+
+
+
+
+    <script>
+        console.error(" this show an error message!");
+        console.warn("This is a warning!");
+        console.info("This is an informational message.");
+        console.debug("Debugging this code...");
+
+
+        const users = [
+            { name: "Aman", age: 21 },
+            { name: "John", age: 25 }
+        ];
+        console.table(users);
+
+
+        console.group("My Group");
+        console.log("Message 1");
+        console.log("Message 2");
+        console.groupEnd();
+
+        console.time();
+
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+        } // Some operation
+       
+        console.timeEnd();
+
+        console.time();
+        let i = 0
+        while (i < 10) {
+            console.log(i);
+            i=i+1
+        }
+        console.timeEnd();
+
+
+        function test() {
+            console.trace("Trace this function call!");
+        }
+        test();
+
+
+        <!-- console.clear(); -->
+
+
+    </script>
+
+
+</body>
+
+</html>

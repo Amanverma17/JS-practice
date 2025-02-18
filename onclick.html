@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            animation: move 2s linear infinite alternate both;
+            
+        }
+        @keyframes move {
+            0%{
+                transform: translateX(0%);
+            }
+            100%{
+                transform: translateX(95vw);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="square">
+
+    </div>
+
+    <button onclick="play()">Play</button>
+    <button onclick="pause()">Paused</button>
+
+    <!-- we can also do it in single line
+     
+    <button onclick="document.getElementById('square').style.animationPlayState='running'">Play</button>
+    <button onclick="document.getElementById('square').style.animationPlayState = 'paused'">Paused</button> -->
+
+
+
+
+    <script>
+        function pause(){
+            document.getElementById('square').style.animationPlayState="paused"
+        }
+        function play(){
+            document.getElementById('square').style.animationPlayState="running"
+        }
+    </script>
+</body>
+</html>

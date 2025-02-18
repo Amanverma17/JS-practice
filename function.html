@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="container">
+    <input type="text" placeholder="Enter a number"><br>
+    <input type="text" placeholder="Enter a number"><br>
+</div>
+<div class="btn">
+    <button onclick="myFunction('+')">+</button>
+    <button onclick="myFunction('-')">-</button>
+    <button onclick="myFunction('*')">*</button>
+    <button onclick="myFunction('/')">/</button>
+</div>
+<h1 id="result"></h1>
+
+
+<script>
+    functoin myFunction(op){
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num1").value;
+        let result=document.getElementById("result");
+    }
+</script> -->
+
+
+
+
+
+ correct code
+
+<div class="container">
+    <input type="text" id="num1" placeholder="Enter a number"><br>
+    <input type="text" id="num2" placeholder="Enter a number"><br>
+</div>
+<div class="btn">
+    <button onclick="myFunction('+')">+</button>
+    <button onclick="myFunction('-')">-</button>
+    <button onclick="myFunction('*')">*</button>
+    <button onclick="myFunction('/')">/</button>
+</div>
+<h1 id="result"></h1>
+<button id="answer"></button>
+
+<script>
+    function myFunction(op) {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let answer = document.getElementById("answer");
+
+
+
+        switch (op) {
+            case '+':
+                answer.innerText = num1 + num2;
+                break;
+            case '-':
+            answer.innerText = num1 - num2;
+                break;
+            case '*':
+                result.innerText = num1 * num2;
+                break;
+            case '/':
+                result.innerText = num2 !== 0 ? num1 / num2 : "Cannot divide by zero!";
+                break;
+            default:
+                result.innerText = "Invalid operation";
+        }
+    }
+</script> 
+
+
+
+
+<!-- 
+
+<button id="red" onclick="color('red')">RED</button>
+
+<script>
+    function color(color) {
+        document.body.style.backgroundColor = color;
+    }
+</script> -->
+
+</body>
+</html>

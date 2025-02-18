@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-direction: column;
+            row-gap: 20px;
+            <!-- background-color: gainsboro; -->
+        }
+
+        input {
+            padding: 10px;
+            width: 400px;
+            border-radius: 5px;
+        }
+
+        .img {
+            background-color: beige;
+            width: 50%;
+            height: 100vh;
+            background-image: url(https://media.licdn.com/dms/image/D5612AQFxFaV4X6-iKQ/article-cover_image-shrink_720_1280/0/1685795561884?e=2147483647&v=beta&t=eum-yhBQk_zuGsjJoGkuKZ48hVIvZuyA-lWosAG1nKI);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .img img {
+            width: 70%;
+        }
+
+        small {
+            height: 20px;
+        }
+
+        .button {
+            height: 50px;
+            width: 200px;
+            font-size: 25px;
+            background: dodgerblue;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            margin-left: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="img">
+            <img src="" alt="">
+        </div>
+        <div class="form-box">
+            <form action="">
+                <input type="text" name="" id="name-input" placeholder="Enter Name">
+                <small id="name_error" class="error"></small>
+
+                <input type="email" name="" id="email-input" placeholder="Enter email">
+                <small id="email_error" class="error"></small>
+
+                <input type="password" name="" id="password-input" placeholder="Enter password">
+                <small id="password_error" class="error"></small>
+
+                <input type="password" name="" id="re-password-input" placeholder="Re-enter password">
+                <small id="re-password_error" class="error"></small>
+
+                <input type="number" name="" id="contact-input" placeholder="Enter contact">
+                <small id="contact_error" class="error"></small>
+
+
+                <button type="button" class="button" onclick="validate(event)">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        let name_pattern = /^[A-Z][a-z]*(\s[A-Za-z]*)*$/;
+        let email_pattern = /^[a-zA-Z][a-zA-Z0-9._]+@[a-z]+\.[a-z]+$/;
+        let pass_pattern = /^[0-9]*$/;
+        let contact_pattern = /^[0-9]{10}$/;
+
+        function validate(event) {
+            event.preventDefault();
+            let name = document.getElementById("name-input").value.trim();
+            let email = document.getElementById("email-input").value.trim();
+            let password = document.getElementById("password-input").value.trim();
+            let re_password = document.getElementById("re-password-input").value.trim();
+            let contact = document.getElementById("contact-input").value.trim();
+            var i=0;
+            let input_array = [name, email, password,re_password, contact];
+            input_array.map((n)=>
+            {
+                if(n==""){
+                    document.getElementsByClassName("error")[i].innerHTML = "Please fillout this field";
+                    i++;
+                }
+            })
+
+
+           
+        }
+       
+    </script>
+
+</body>
+
+</html>
+<!-- if (name == "") {
+    document.getElementById("name_error").innerHTML = "Enter name"
+    document.getElementById("name_error").style.color = "red"
+    document.getElementById("name-input").style.boxShadow = "0 0 10px red"
+    document.getElementById("name-input").style.border = "2px solid red"
+}
+
+else if (name_pattern.test(name)) {
+    document.getElementById("name_error").innerHTML = "Name is Valid"
+    document.getElementById("name_error").style.color = "green"
+    document.getElementById("name-input").style.boxShadow = "0 0 10px green"
+    document.getElementById("name-input").style.border = "2px solid green"
+}
+
+else {
+    document.getElementById("name_error").innerHTML = "Enter a Valid Name"
+    document.getElementById("name_error").style.color = "red"
+    document.getElementById("name-input").style.boxShadow = "0 0 10px red"
+    document.getElementById("name-input").style.border = "2px solid red"
+}
+
+
+if (email == "") {
+    document.getElementById("email_error").innerHTML = "Enter email"
+    document.getElementById("email-input").style.boxShadow = "0 0 10px red"
+    document.getElementById("email-input").style.border = "2px solid red"
+}
+
+else if (email_pattern.test(email)) {
+    document.getElementById("email_error").innerHTML = "Email is Valid"
+    document.getElementById("email-input").style.boxShadow = "0 0 10px green"
+    document.getElementById("email-input").style.border = "2px solid green"
+}
+
+else {
+    document.getElementById("email_error").innerHTML = "Enter a Valid Email"
+    document.getElementById("email-input").style.boxShadow = "0 0 10px red"
+    document.getElementById("email-input").style.border = "2px solid red"
+}
+
+
+if (password == "") {
+    document.getElementById("password_error").innerHTML = "Enter password"
+    document.getElementById("password-input").style.boxShadow = "0 0 10px red"
+    document.getElementById("password-input").style.border = "2px solid red"
+}
+
+else if (password_pattern.test(password)) {
+    document.getElementById("password_error").innerHTML = "password is Valid"
+    document.getElementById("password-input").style.boxShadow = "0 0 10px green"
+    document.getElementById("password-input").style.border = "2px solid green"
+}
+
+else {
+    document.getElementById("password_error").innerHTML = "Enter a Valid password"
+    document.getElementById("password-input").style.boxShadow = "0 0 10px red"
+    document.getElementById("password-input").style.border = "2px solid red"
+}
+
+if (re_password == password && re_password !== "") {
+    document.getElementById("re-password_error").innerHTML = "Re-password is Valid"
+    document.getElementById("re-password-input").style.boxShadow = "0 0 10px green"
+    document.getElementById("re-password-input").style.border = "2px solid green"
+}
+else {
+    document.getElementById("re-password_error").innerHTML = "Enter correct re-password"
+    document.getElementById("re-password-input").style.boxShadow = "0 0 10px red"
+    document.getElementById("re-password-input").style.border = "2px solid red"
+}
+
+if (contact == "") {
+    document.getElementById("contact_error").innerHTML = "Enter contact"
+    document.getElementById("contact-input").style.boxShadow = "0 0 10px red"
+    document.getElementById("contact-input").style.border = "2px solid red"
+}
+
+else if (contact_pattern.test(contact)) {
+    document.getElementById("contact_error").innerHTML = "contact is Valid"
+    document.getElementById("contact-input").style.boxShadow = "0 0 10px green"
+    document.getElementById("contact-input").style.border = "2px solid green"
+}
+
+else {
+    document.getElementById("contact_error").innerHTML = "Enter a Valid contact"
+    document.getElementById("contact-input").style.boxShadow = "0 0 10px red"
+    document.getElementById("contact-input").style.border = "2px solid red"
+} -->
